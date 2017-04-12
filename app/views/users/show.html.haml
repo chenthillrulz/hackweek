@@ -5,7 +5,7 @@
 .row
   .col-sm-12
     .page-header
-      = image_tag(@user.gravatar_url(:size => "64"), :class => "img-thumbnail pull-left", :title => "#{@user.name}", :alt => @user.name)
+      = image_tag(@user.avatar.url(:small), :size => "70", :class => "img-thumbnail pull-left", :title => "#{@user.name}", :alt => @user.name)
       %h1
         &nbsp;
         = @user.name

@@ -28,8 +28,10 @@ class User < ActiveRecord::Base
   before_validation :get_ldap_attrs
   after_save ThinkingSphinx::RealTime.callback_for(:user)
 
-  include Gravtastic
-  has_gravatar
+  #include Gravtastic
+  #has_gravatar
+  has_attached_file :avatar, styles: { small: "100x100>"}, default_url: "/images/:style/missing.png"
+  validates_attachment_file_name :avatar, matches: [/png\z/, /jpe?g\z/]
 
   def role?(role)
     return !!self.roles.find_by_name(role)
@@ -44,6 +46,20 @@ class User < ActiveRecord::Base
     lastName = Devise::LDAP::Adapter.get_ldap_param(self.login_name,'sn').first
     self.name = firstName + ' ' + lastName;
     self.email = Devise::LDAP::Adapter.get_ldap_param(self.login_name,'mail').first
+
+    ldap_photo = Devise::LDAP::Adapter.get_ldap_param(self.login_name,'thumbnailPhoto').first;
+
+    if !ldap_photo.blank?
+      data = StringIO.new(ldap_photo)
+      data.class_eval do
+        attr_accessor :content_type, :original_filename
+      end
+
+      data.content_type = "image/jpeg"
+      data.original_filename = File.basename(self.login_name + ".jpg")
+      self.avatar = data
+    end
+
   end
 
   def add_keyword! name
