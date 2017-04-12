@@ -1,10 +1,12 @@
 class User < ActiveRecord::Base
-  devise :ichain_authenticatable, :ichain_registerable
+  #devise :ichain_authenticatable, :ichain_registerable
+  devise :ldap_authenticatable
 
   validates :name, presence: true
   validates :email, presence: true
-  validates_uniqueness_of :name
-  validates_uniqueness_of :email
+  validates :login_name, presence: true
+  validates_uniqueness_of :login_name
+  #validates_uniqueness_of :email
 
   has_many :originated_projects, foreign_key: 'originator_id', class_name: Project
   has_many :updates, foreign_key: 'author_id', dependent: :destroy
@@ -23,6 +25,7 @@ class User < ActiveRecord::Base
 
   has_and_belongs_to_many :roles
 
+  before_validation :get_ldap_attrs
   after_save ThinkingSphinx::RealTime.callback_for(:user)
 
   include Gravtastic
@@ -34,6 +37,13 @@ class User < ActiveRecord::Base
 
   def to_param
     name
+  end
+
+  def get_ldap_attrs
+    firstName = Devise::LDAP::Adapter.get_ldap_param(self.login_name,'givenName').first
+    lastName = Devise::LDAP::Adapter.get_ldap_param(self.login_name,'sn').first
+    self.name = firstName + ' ' + lastName;
+    self.email = Devise::LDAP::Adapter.get_ldap_param(self.login_name,'mail').first
   end
 
   def add_keyword! name
@@ -89,5 +99,10 @@ class User < ActiveRecord::Base
       user = create(name: username, email: attributes[:email])
     end
     user
+  end
+
+  # hack for remember_token
+  def authenticatable_token
+    Digest::SHA1.hexdigest(email)[0,29]
   end
 end

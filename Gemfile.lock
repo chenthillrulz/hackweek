@@ -93,8 +93,9 @@ GEM
       railties (>= 4.1.0, < 5.1)
       responders
       warden (~> 1.2.3)
-    devise_ichain_authenticatable (0.3.1)
-      devise (>= 2.2)
+    devise_ldap_authenticatable (0.8.5)
+      devise (>= 3.4.1)
+      net-ldap (>= 0.6.0, <= 0.11)
     diff-lcs (1.2.5)
     docile (1.1.5)
     domain_name (0.5.20160310)
@@ -163,6 +164,7 @@ GEM
     mousetrap-rails (1.4.6)
     multi_json (1.12.1)
     mysql2 (0.3.18)
+    net-ldap (0.11)
     netrc (0.11.0)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
@@ -330,7 +332,7 @@ DEPENDENCIES
   coveralls
   database_cleaner
   devise
-  devise_ichain_authenticatable
+  devise_ldap_authenticatable
   factory_girl_rails
   faker
   figaro
@@ -367,4 +369,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.14.4
+   1.14.6

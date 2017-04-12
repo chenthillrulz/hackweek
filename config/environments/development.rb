@@ -30,5 +30,5 @@ Hackweek::Application.configure do
   config.assets.debug = true
 
   # Enable authentification test mode
-  config.devise.ichain_test_mode = true
+  #config.devise.ichain_test_mode = true
 end
