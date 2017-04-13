@@ -25,7 +25,7 @@ default: &default
     attribute: cn
     base: OU=User,OU=India,DC=eur,DC=ad,DC=sag
     admin_user: CN=cpal,OU=User,OU=India,DC=eur,DC=ad,DC=sag
-    admin_password:  Welcome@1234
+    admin_password: Bhagvan@1234
     ssl: false
 
 ## Environment
