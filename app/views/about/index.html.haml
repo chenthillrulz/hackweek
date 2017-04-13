@@ -1,7 +1,6 @@
 .row
-  .col-md-12
-    %div
-      = image_tag 'hackweek-logo-light.png', class: 'img-responsive img-center', alt: 'SUSE Hack Week Logo'
+  %div
+    = image_tag 'Tech_fest_banner.jpg', class: 'img-responsive img-center', alt: 'TechFest Banner'
 .row
   .col-md-12
     .page-header
@@ -10,8 +9,8 @@
           = @episode.name
           %small
             = "#{@episode.start_date.strftime("%A %d %B")} - #{@episode.end_date.strftime("%A %d %B %Y")}"
-      - else
-        %div
+      -# else
+      -#  %div
           = image_tag 'hackweek-label.png', class: 'img-responsive', alt: 'Hack Week'
 .row
   .col-md-12
