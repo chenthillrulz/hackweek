@@ -40,7 +40,7 @@
         %ul.nav.navbar-nav.navbar-right.hidden-xs
           %li.dropdown
             %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", :id => "user-dropdown"}
-              = image_tag(current_user.avatar.url(:small), :size => "25", :title => "Yo #{current_user.name}!")
+              = image_tag(current_user.avatar.url(:small), :size => "22x22", :title => "Yo #{current_user.name}!")
               %b.caret
             %ul.dropdown-menu
               %li
