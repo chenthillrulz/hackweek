@@ -13,15 +13,15 @@
         %li.dropdown
           = link_to(projects_path(@episode), {class: "navbar-brand hackweek-episode-header"}) do
             - if @episode == :all
-              = "All Hackweeks"
+              = "All Episodes"
             - else
               = @episode.name if @episode
           = link_to('#', {class: "dropdown-toggle navbar-brand hackweek-episode-header-dropdown", "data-toggle"=>"dropdown"} ) do
             %i.fa.fa-caret-square-o-down
           %ul.dropdown-menu{:role => "menu"}
             %li{:role => "presentation"}
-              = link_to(projects_path(:all), {title: "Projects for all hackweeks"}) do
-                All Hackweeks
+              = link_to(projects_path(:all), {title: "Projects for all Tech Interrupt Edpisodes"}) do
+                All Episodes
             - Episode.all.reverse.each do |episode|
               %li{:role => "presentation"}
                 = link_to(projects_path(episode), {title: "Projects for #{episode.name}"}) do
@@ -54,7 +54,7 @@
         %ul.nav.navbar-nav.navbar-right.visible-xs
           %li{role: "presentation", class: "divider"}
           %li{role: "presentation", class: "dropdown-header"}
-            Hackweeks
+            Episodes
           - Episode.all.reverse.each do |episode|
             %li
               = link_to(projects_path(episode), {title: "Projects for #{episode}"}) do
