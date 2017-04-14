@@ -10,21 +10,29 @@
     %meta{:name => "viewport", :content =>"width=device-width, initial-scale=1.0"}
     = favicon_link_tag 'favicon.gif'
     = stylesheet_link_tag "application", :media => "all"
-    %meta{:property => "og:title", :content => "SUSE Hack Week"}
+    %meta{:property => "og:title", :content => "Software AG Tech Interrupt"}
     %meta{:property => "og:image", :content => "http://hackweek.suse.com/images/hackweek-logo-10.png"}
-    %meta{:property => "og:site_name", :content => "SUSE Hack Week"}
-    %meta{:property => "og:description", :content => "Hack Week is the week where SUSE engineers can experiment without limits. This is the opportunity to innovate, collaborate across teams, and learn."}
+    %meta{:property => "og:site_name", :content => "Software AG Tech Interrupt"}
+    %meta{:property => "og:description", :content => "Tech interrupt is the event where SUSE engineers can experiment without limits. This is the opportunity to innovate, collaborate across teams, and learn."}
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
     = render :partial => "layouts/header"
     .container
-      #content
+      - content_for :my_part do
         - if flash
           = render partial: "layouts/alert", flash: flash
-        - if @news
-          = render partial: "layouts/news"
-        = yield
+          - if @news
+            = render partial: "layouts/news"
+          = yield
+
+      - if @is_home_page
+        #home-content
+          = yield :my_part
+      - else
+        #content
+          = yield :my_part
+
     = render :partial => "layouts/footer"
 
     = render :partial => "layouts/scripts"
