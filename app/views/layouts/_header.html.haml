@@ -8,17 +8,15 @@
         %span.icon-bar
         %span.icon-bar
       =link_to root_path, class: "navbar-brand" do
-        = image_tag 'hackweek-logo-dark.icon.png', style: 'height: 30px',
-                                           alt: 'Home',
-                                           title: 'Home'
+        = image_tag 'SAGHeaderLogo.png', alt: 'Home', title: 'Home'
       %ul.nav.navbar-nav.hidden-xs
         %li.dropdown
-          = link_to(projects_path(@episode), {class: "navbar-brand"}) do
+          = link_to(projects_path(@episode), {class: "navbar-brand hackweek-episode-header"}) do
             - if @episode == :all
               = "All Hackweeks"
             - else
               = @episode.name if @episode
-          = link_to('#', {class: "dropdown-toggle navbar-brand", "data-toggle"=>"dropdown"} ) do
+          = link_to('#', {class: "dropdown-toggle navbar-brand hackweek-episode-header-dropdown", "data-toggle"=>"dropdown"} ) do
             %i.fa.fa-caret-square-o-down
           %ul.dropdown-menu{:role => "menu"}
             %li{:role => "presentation"}
@@ -39,8 +37,8 @@
       - if user_signed_in?
         %ul.nav.navbar-nav.navbar-right.hidden-xs
           %li.dropdown
-            %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", :id => "user-dropdown"}
-              = image_tag(current_user.avatar.url(:small), :size => "22x22", :title => "Yo #{current_user.name}!")
+            %a.profile-image.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", :id => "user-dropdown"}
+              = image_tag(current_user.avatar.url(:small), :size => "34", :class => "img-circle special-img", :title => "Yo #{current_user.name}!")
               %b.caret
             %ul.dropdown-menu
               %li
