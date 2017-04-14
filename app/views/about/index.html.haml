@@ -1,40 +1,45 @@
-.row
-  %div
-    = image_tag 'Tech_fest_banner.jpg', class: 'img-responsive img-center', alt: 'TechFest Banner'
-.row
-  .col-md-12
-    .page-header
-      - if @episode
-        %h1
-          = @episode.name
-          %small
-            = "#{@episode.start_date.strftime("%A %d %B")} - #{@episode.end_date.strftime("%A %d %B %Y")}"
-      -# else
-      -#  %div
-          = image_tag 'hackweek-label.png', class: 'img-responsive', alt: 'Hack Week'
-.row
-  .col-md-12
-    %p.lead
-      The event that brings together engineers across locations
-      to collaborate, innovate and celebrate software. Across teams or individually, but always without limits. Time to expand
-      your horizons! And always remember to have fun!!
-  .col-md-12
-    %p.lead
-      What are you going to hack on?
-.row
-  .col-md-8.col-md-offset-2
-    %p
-      .btn-group.btn-group-justified.btn-group-lg
-        = link_to new_project_path, class: 'btn btn-lg btn-info' do
-          Start
-          %span.hidden-xs
-            a Project
-        = link_to projects_path(@episode), class: 'btn btn-lg btn-success' do
-          Join
-          %span.hidden-xs
-            a Project
-.row
-  .col-md-12
-    %p.small.pull-right{style: 'margin-top: 20px'}
-      New here &amp; no idea what you're supposed to do?
-      = link_to 'Learn more...', about_path
+.home-page
+  .row
+    .banner-section
+      = image_tag 'Tech_fest_banner.jpg', class: 'img-responsive img-center', alt: 'TechFest Banner'
+      .episode-title
+        Episode 15 - Current Theme
+      .episode-date
+        April 21 - 23 2017
+  .row
+    .col-md-12
+      .page-header
+        - if @episode
+          %h1
+            = @episode.name
+            %small
+              = "#{@episode.start_date.strftime("%A %d %B")} - #{@episode.end_date.strftime("%A %d %B %Y")}"
+        -# else
+        -#  %div
+            = image_tag 'hackweek-label.png', class: 'img-responsive', alt: 'Hack Week'
+  .row
+    .col-md-12
+      %p.lead
+        The event that brings together engineers across locations
+        to collaborate, innovate and celebrate software. Across teams or individually, but always without limits. Time to expand
+        your horizons! And always remember to have fun!!
+    .col-md-12
+      %p.lead
+        What are you going to hack on?
+  .row
+    .col-md-8.col-md-offset-2
+      %p
+        .btn-group.btn-group-justified.btn-group-lg
+          = link_to new_project_path, class: 'btn btn-lg btn-info' do
+            Start
+            %span.hidden-xs
+              a Project
+          = link_to projects_path(@episode), class: 'btn btn-lg btn-success' do
+            Join
+            %span.hidden-xs
+              a Project
+  .row
+    .col-md-12
+      %p.small.pull-right{style: 'margin-top: 20px'}
+        New here &amp; no idea what you're supposed to do?
+        = link_to 'Learn more...', about_path

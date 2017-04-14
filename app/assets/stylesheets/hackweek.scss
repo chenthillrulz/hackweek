@@ -67,6 +67,29 @@ h4.project-list-item img {
   margin-top: 15px;
 }
 
+.home-page .banner-section {
+  position: relative;
+}
+
+@mixin episode-pos {
+  position: absolute;
+  top: 431px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.home-page .episode-title {
+  @include episode-pos;
+  color: darkblue;
+  left: 30px;
+}
+
+.home-page .episode-date {
+  @include episode-pos;
+  color: white;
+  left: 637px;
+}
+
 footer {
   position: absolute;
   bottom: 0;
