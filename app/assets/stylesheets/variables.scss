@@ -1,0 +1,101 @@
+/* Begin - Global Color Variables */
+$primary-brand-color: #0899CC;
+$primary-brand-color-dark: #333333;
+
+$secondary-brand-color-light-1: darken( desaturate( adjust-hue( $primary-brand-color, 10deg ), 14 ), 21 );   /*#0C3B60*/
+$secondary-brand-color-light-2: darken( saturate( $primary-brand-color, 8 ), 12 );                           /*#006F97*/
+$secondary-brand-color-light-3: lighten( saturate( adjust-hue( $primary-brand-color, -3deg ), 4 ), 3 );      /*#04B2E0*/
+$secondary-brand-color-light-4: lighten( desaturate( adjust-hue( $primary-brand-color, 2deg ), 19 ), 32 );   /*#8BCFED*/
+$secondary-brand-color-light-5: lighten( desaturate( adjust-hue( $primary-brand-color, 6deg ), 23 ), 46 );   /*#CDE7F6*/
+
+$secondary-brand-color-dark-1: #323232;
+$secondary-brand-color-dark-2: #666666;
+$secondary-brand-color-dark-3: #989898;
+$secondary-brand-color-dark-4: #CCCCCB;
+$secondary-brand-color-dark-5: #E5E5E4;
+
+$tertiary-brand-color-rio-grande: #BAD80A;  /* Light Green */
+$tertiary-brand-color-vermilion: #FF4200;  /* Bright Orange */
+
+$white-color: #fff;
+$black-color: #000;
+$white-smoke-color: #f5f5f5;
+
+/* Derived Colors */
+$primary-brand-color-light: $primary-brand-color;
+
+/* End - Global Color Variables */
+
+$text-color: darken(saturate(adjust-hue($white-smoke-color, 0.0000), 0.0000), 76.0784);
+$border-color: darken(saturate(adjust-hue($white-smoke-color, 0.0000), 0.0000), 41.1765);
+$active-color: $primary-brand-color;
+$disabled-color: rgba(159,158,157,.8);
+$shadow-color: darken($text-color,80%);
+$body-bg: $white-smoke-color;
+
+
+/*Scaffolding*/
+/*Settings for some of the most global styles.*/
+
+/*Global textual link color.*/
+$link-color:            $primary-brand-color;
+/*Link hover color set via `darken()` function.*/
+$link-hover-color:      darken($link-color, 15%);
+/*Link hover decoration.*/
+$link-hover-decoration: underline;
+
+
+/*Typography*/
+
+$font-family-base:        'Avenir LT Std', Arial, Helvetica, Verdana, sans-serif;
+
+$font-size-base:          14px;
+
+$font-size-large:         ceil(($font-size-base * 1.10));
+$font-size-small:         ceil(($font-size-base * 0.75));
+
+$font-size-h1:            floor(($font-size-base * 2));
+$font-size-h2:            floor(($font-size-base * 1.5));
+$font-size-h3:            ceil(($font-size-base * 1.17));
+$font-size-h4:            $font-size-base;
+$font-size-h5:            ceil(($font-size-base * 0.83));
+$font-size-h6:            ceil(($font-size-base * 0.75));
+
+$font-family: $font-family-base;
+$font-size: $font-size-base;
+$icon-font-path:'../fonts/';
+
+
+/*Header variables*/
+
+$header-bg: lighten(saturate(adjust-hue($white-smoke-color, 0.0000), 0.0000), 3.9216);
+$header-box-shadow: rgba(0, 0, 0, .15);
+$dropdown-menu-border: darken(saturate(adjust-hue($white-smoke-color, 0.0000), 0.0000), 16.0784);
+$dropdown-menu-bg: darken(saturate(adjust-hue($white-smoke-color, 60.0000), 1.8868), 6.4706);
+
+/*Grid*/
+$grid-header-bg: darken(saturate(adjust-hue($white-smoke-color, 0.0000), 0.0000), 22.7451);
+$grid-even-row-bg-color: darken(saturate(adjust-hue($white-smoke-color, 0.0000), 0.0000), 1.5686);
+$grid-selected-row-color: #91cae8;
+$grid-icon-color: darken(saturate(adjust-hue($white-smoke-color, 0.0000), 0.0000), 56.0784);
+$grid-icon-hover-color: darken(saturate(adjust-hue($white-smoke-color, 0.0000), 0.0000), 76.0784);
+$grid-row-border: darken(saturate(adjust-hue($white-smoke-color, 60.0000), 0.9709), 16.2745);
+/*$grid-row-hover-bg: rgba(8,153,204,.1);*/
+$grid-row-hover-bg: transparentize($primary-brand-color, 0.9);
+$grid-error-color: #c1272d;
+
+/*Dropdown*/
+$hover-bg: darken(saturate(adjust-hue($white-smoke-color, 60.0000), 1.8868), 6.4706);
+$label-color: $text-color;
+$error-color: darken(saturate(adjust-hue($white-smoke-color, 357.8723), 67.4641), 55.0980);
+$required-color : rgba(255,0,0,1);
+
+/*Input*/
+$title-color: darken(saturate(adjust-hue($white-smoke-color, 0.0000), 0.0000), 56.0784);
+
+$placeholder-color: #C7C7CD;
+$validation-error-color: #AF2227;
+
+/* Datepicker / calender */
+$date-hover-bg: $grid-row-hover-bg;
+

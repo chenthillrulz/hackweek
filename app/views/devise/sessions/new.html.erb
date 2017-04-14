@@ -1,26 +1,23 @@
-<h2>Log in</h2>
+<div class="sag-login-page">
+  <div class="sag-login-container">
+    <div class="sag-login-panel">
+      <div class="welcome-message" ></div>
+      <div class="welcome-text">Welcome</div>
+      <div class="login-text">Please Login</div>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :login_name %><br />
-    <%= f.text_field :login_name, autofocus: true %>
+
+   <div class="inner-addon left-addon">
+     <%= f.text_field :login_name, autofocus: true,  class: "sag-login-txt" %>
+   </div>
+
+  <div class="inner-addon left-addon">
+    <%= f.password_field :password, autocomplete: "off", class: "sag-login-txt" %>
   </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end -%>
-
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in", class: "sag-btn sag-login-btn" %>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
+</div>
+</div>
+</div>
