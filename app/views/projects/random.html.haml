@@ -30,7 +30,7 @@
             .well.well-sm#hackers
               - @project.users.each do |user|
                 = link_to user_path(user) do
-                  = image_tag user.gravatar_url(:size => "64"), alt: user.name, title: user.name, class: "img-thumbnail", id: "user#{user.id}-gravatar"
+                  = image_tag user.avatar.url(:small), :size => "64", alt: user.name, title: user.name, class: "img-thumbnail", id: "user#{user.id}-gravatar"
               .clearfix
 
     .row

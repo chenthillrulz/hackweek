@@ -16,7 +16,7 @@
         .well.well-sm
           - project.users.each do |user|
             = link_to user_path(user) do
-              = image_tag(user.gravatar_url(:size => "24"), :class => "img-thumbnail", :title => "#{user.name}", :alt => user.name)
+              = image_tag(user.avatar.url(:small), :size => "24", :class => "img-thumbnail", :title => "#{user.name}", :alt => user.name)
   .panel-footer
     %small
       an idea by
