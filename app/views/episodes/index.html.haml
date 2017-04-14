@@ -25,4 +25,4 @@
                   = render :partial => "episodes/file_buttons", :locals => {:episode => episode }
     %p
       - if can? :write, Episode
-        = link_to "New Hackweek", new_episode_path, :class => "btn btn-success pull-right"
+        = link_to "New Episode", new_episode_path, :class => "btn btn-success pull-right"
