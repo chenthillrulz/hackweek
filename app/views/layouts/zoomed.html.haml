@@ -2,17 +2,16 @@
   %head
     %title
       - if content_for?(:title)
-        Hack Week:
+        Episode:
         = yield :title
       -else
-        Hack Week
+        Episodes
     %meta{charset: 'utf-8'}
     %meta{name: 'viewport', content: 'width=device-width, initial-scale=1.0'}
     = favicon_link_tag 'favicon.gif'
     = stylesheet_link_tag 'zoomed.application', media: 'all'
-    %meta{property: 'og:title', content: 'SUSE Hack Week'}
-    %meta{property: 'og:image', content: 'http://hackweek.suse.com/images/hackweek-logo-10.png'}
-    %meta{property: 'og:site_name', content: 'SUSE Hack Week'}
+    %meta{property: 'og:title', content: 'Software AG Tech Interrupt'}
+    %meta{property: 'og:site_name', content: 'Software AG Tech Interrupt'}
     %meta{property: 'og:description', content: 'Hack Week is the week where SUSE engineers can experiment without limits. This is the opportunity to innovate, collaborate across teams and learn.'}
     = javascript_include_tag 'zoomed.application'
     = csrf_meta_tags
