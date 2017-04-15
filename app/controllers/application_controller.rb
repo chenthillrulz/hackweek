@@ -6,8 +6,8 @@ class ApplicationController < ActionController::Base
 
   before_filter :store_location
   before_filter :authenticate_user!
-  #before_filter :load_news
-  #before_filter :set_episode
+  before_filter :load_news
+  before_filter :set_episode
 
   before_filter do
     resource = controller_name.singularize.to_sym

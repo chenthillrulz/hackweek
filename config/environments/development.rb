@@ -29,7 +29,7 @@ Hackweek::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
-  config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
+
 
   # Enable authentification test mode
   #config.devise.ichain_test_mode = true

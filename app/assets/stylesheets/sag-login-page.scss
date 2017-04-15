@@ -1,15 +1,61 @@
 @import "variables.scss";
+
 $welcome-text-color: $primary-brand-color-light;
 $login-text-color: #333333;
 $login-placeholder-color: #666666;
 $login-txt-color: #000000;
 $login-input-hover-color: #666666;
 $login-input-focus: $primary-brand-color-light;
-$login-txt-border:#999;
+$login-txt-border: #999;
 $login-txt-active-color: $primary-brand-color-light;
 $login-btn-bgcolor: $primary-brand-color-light;
 $login-btn-color: #fff;
-$login-btn-hover-bgcolor: lighten( saturate( adjust-hue( $login-btn-bgcolor, -3deg ), 4 ), 3 );
+$login-btn-hover-bgcolor: lighten(saturate(adjust-hue($login-btn-bgcolor, -3deg), 4), 3);
+
+@font-face {
+  font-family: 'Glyphter';
+  src: font-url("Glyphter.woff") format("woff"),
+  font-url("Glyphter.ttf") format("truetype"),
+  font-url("Glyphter.svg#Glyphter") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class*='sag-ico_']:before {
+  display: inline-block;
+  font-family: 'Glyphter';
+  font-style: normal;
+  font-weight: bold;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+}
+
+.sag-ico_password_active:before {
+  content: '\004a';
+}
+
+.sag-ico_password_unactive:before {
+  content: '\004b';
+}
+
+.sag-ico_password_up:before {
+  content: '\004c';
+}
+
+.sag-ico_user_active:before {
+  content: '\004d';
+}
+
+.sag-ico_user_disabled:before {
+  content: '\004e';
+}
+
+.sag-ico_user_up:before {
+  content: '\004f';
+}
+
 .sag-login-container {
   display: table;
   margin: auto;
@@ -25,7 +71,7 @@ $login-btn-hover-bgcolor: lighten( saturate( adjust-hue( $login-btn-bgcolor, -3d
     width: 300px;
     border: 1px solid $login-txt-border;
     margin-top: 10px;
-    padding: 14px 0 14px 10px;
+    padding: 14px 0 14px 39px;
     color: $login-txt-color;
     &:placeholder-shown {
       color: $login-placeholder-color;
@@ -86,19 +132,19 @@ $login-btn-hover-bgcolor: lighten( saturate( adjust-hue( $login-btn-bgcolor, -3d
   margin-top: 10px;
   span {
     position: absolute;
-    margin-top: 2px;
     padding: 20px 10px 10px 11px;
     font-size: 22px;
   }
 }
 
 .left-addon {
-  input
-   {
+  input,
+  select {
     padding-left: 40px;
   }
   span {
-    margin-left: -300px;
+    left: 0px;
+    top: 0px;
   }
   .sag-login-txt:focus + span {
     color: $welcome-text-color;
@@ -130,48 +176,4 @@ $login-btn-hover-bgcolor: lighten( saturate( adjust-hue( $login-btn-bgcolor, -3d
 
 .above-username {
   padding-bottom: 20px;
-}
-
-@font-face {
-  font-family: 'Glyphter';
-  src: font-url("Glyphter.woff") format("woff"),
-  font-url("Glyphter.ttf") format("truetype"),
-  font-url("Glyphter.svg#Glyphter") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
-[class*='sag-ico_']:before {
-  display: inline-block;
-  font-family: 'Glyphter';
-  font-style: normal;
-  font-weight: bold;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-size: 16px;
-}
-
-.sag-ico_password_active:before {
-  content: '\004a';
-}
-
-.sag-ico_password_unactive:before {
-  content: '\004b';
-}
-
-.sag-ico_password_up:before {
-  content: '\004c';
-}
-
-.sag-ico_user_active:before {
-  content: '\004d';
-}
-
-.sag-ico_user_disabled:before {
-  content: '\004e';
-}
-
-.sag-ico_user_up:before {
-  content: '\004f';
 }

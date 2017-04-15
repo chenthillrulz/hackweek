@@ -7,13 +7,20 @@
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-   <div class="inner-addon left-addon">
-     <%= f.text_field :login_name, autofocus: true,  class: "sag-login-txt" %>
+   <div class="inner-addon">
+     <%= f.text_field :login_name, autofocus: true,  class: "sag-login-txt", placeholder: "Username" %>
+     <div class="left-addon">
+      <span class="sag-ico_user_up"></span>
+     </div>
    </div>
 
-  <div class="inner-addon left-addon">
-    <%= f.password_field :password, autocomplete: "off", class: "sag-login-txt" %>
+  <div class="inner-addon">
+    <%= f.password_field :password, autocomplete: "off", class: "sag-login-txt", placeholder: "Password" %>
+    <div class="left-addon">
+      <span class="sag-ico_password_active"></span>
+    </div>
   </div>
+
   <div class="actions">
     <%= f.submit "Log in", class: "sag-btn sag-login-btn" %>
   </div>
