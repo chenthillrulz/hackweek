@@ -7,6 +7,8 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 250px;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNjY2MiPjwvcmVjdD4KPC9zdmc+");
 }
 
@@ -73,21 +75,33 @@ h4.project-list-item img {
 
 @mixin episode-pos {
   position: absolute;
-  top: 431px;
-  font-size: 35px;
-  font-weight: bold;
+  font-style: normal;
 }
 
 .home-page .episode-title {
   @include episode-pos;
-  color: darkblue;
-  left: 30px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 26px;
+  top: 429px;
+  left: 791px;
+  color: white;
 }
 
 .home-page .episode-date {
   @include episode-pos;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  top: 465px;
+  left: 969px;
   color: white;
-  left: 637px;
+}
+
+p.lead {
+  color: dimgrey;
+  font-size: 16px;
+  margin-top: 15px;
+  left: 0px;
+  right: 0px;
 }
 
 footer {

@@ -8,17 +8,6 @@
         April 21 - 23 2017
   .row
     .col-md-12
-      .page-header
-        - if @episode
-          %h1
-            = @episode.name
-            %small
-              = "#{@episode.start_date.strftime("%A %d %B")} - #{@episode.end_date.strftime("%A %d %B %Y")}"
-        -# else
-        -#  %div
-            = image_tag 'hackweek-label.png', class: 'img-responsive', alt: 'Hack Week'
-  .row
-    .col-md-12
       %p.lead
         The event that brings together engineers across locations
         to collaborate, innovate and celebrate software. Across teams or individually, but always without limits. Time to expand
