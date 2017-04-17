@@ -68,40 +68,42 @@ h4.project-list-item img {
 .navbar-form {
   margin-top: 15px;
 }
+.home-page {
+  .banner-section {
+    position: relative;
+  }
 
-.home-page .banner-section {
-  position: relative;
-}
+  .episode-details {
+    position: absolute;
+    text-align: right;
+    top: 428px;
+    left: 699px;
+    width: 413px;
+  }
 
-@mixin episode-pos {
-  position: absolute;
-  font-style: normal;
-}
+  .episode-title {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-size: 26px;
+    color: white;
+  }
 
-.home-page .episode-title {
-  @include episode-pos;
-  font-family: 'Roboto', sans-serif;
-  font-size: 26px;
-  top: 429px;
-  left: 791px;
-  color: white;
-}
+  .episode-date {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-size: 18px;
+    color: white;
+  }
 
-.home-page .episode-date {
-  @include episode-pos;
-  font-family: 'Roboto', sans-serif;
-  font-size: 18px;
-  top: 465px;
-  left: 969px;
-  color: white;
-}
-
-p.lead {
-  color: dimgrey;
-  font-size: 16px;
-  margin-top: 15px;
-  left: 0px;
-  right: 0px;
+  p.lead {
+    color: dimgrey;
+    font-size: 16px;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 12px;
+    left: 0px;
+    right: 0px;
+  }
 }
 
 footer {
