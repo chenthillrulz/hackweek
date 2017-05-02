@@ -66,6 +66,7 @@ Hackweek::Application.routes.draw do
 
   get "about", to: "about#show"
   get "howto", to: "about#show"
+  get "credits", to: "about#credits"
 
   get "news", to: "announcements#index"
 
