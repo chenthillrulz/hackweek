@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
   before_filter :authenticate_user!
   before_filter :load_news
   before_filter :set_episode
+  before_filter :set_application_title
 
   before_filter do
     resource = controller_name.singularize.to_sym
@@ -84,4 +85,9 @@ class ApplicationController < ActionController::Base
     end
     logger.debug("\n\nEpisode: #{@episode}\n\n")
   end
+
+  def set_application_title
+    @application_title = 'Tech Interrupt'
+  end
+
 end
