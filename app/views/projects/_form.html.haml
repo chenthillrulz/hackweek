@@ -11,7 +11,7 @@
           = msg
 
   .form-group
-    = f.text_field :title, placeholder: 'Project title', class: 'form-control input-lg', required: 'required'
+    = f.text_field :title, placeholder: 'title', class: 'form-control input-lg', required: 'required'
   
   .panel.panel-default
     .panel-heading
@@ -33,6 +33,6 @@
   .form-group
     = f.label(:avatar)
     = f.file_field :avatar
-  = f.submit class: 'btn btn-success pull-right'
+  = f.submit value: 'Create Idea', class: 'btn btn-success pull-right'
 
 
