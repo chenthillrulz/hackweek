@@ -78,7 +78,7 @@ class ProjectsController < ApplicationController
     @project.originator = current_user
 
     if @project.save
-      redirect_to project_path(@episode, @project), notice: 'Project was successfully created.'
+      redirect_to project_path(@episode, @project), notice: 'Idea was successfully created.'
     else
       render action: 'new'
     end
@@ -179,13 +179,13 @@ class ProjectsController < ApplicationController
       @project.episodes << @episode
     end
 
-    redirect_to project_path(@episode, @project), notice: "Added hackweek #{@episode.name}"
+    redirect_to project_path(@episode, @project), notice: "Added episode #{@episode.name}"
   end
 
   # DELETE /projects/1/delete_hackweek/2
   def delete_episode
     @project.episodes.delete(@episode)
-    redirect_to project_path(nil, @project), notice: "Removed hackweek #{@episode.name}"
+    redirect_to project_path(nil, @project), notice: "Removed episode #{@episode.name}"
   end
 
   # GET /projects/random
