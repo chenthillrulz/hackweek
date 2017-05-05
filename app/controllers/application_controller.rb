@@ -87,7 +87,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_application_title
-    @application_title = 'Tech Interrupt'
+    @application_title = 'The Magic Mirror'
   end
 
 end
