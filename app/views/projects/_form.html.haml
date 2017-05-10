@@ -24,7 +24,7 @@
       .tab-content
         #markdown-source.tab-pane.active.fade.in{ role: 'tab-pane' }
           .form-group
-            = f.text_area :description, rows: 20, placeholder: 'Detailed description of your idea. You can use **markdown**.', class: 'form-control input-lg markdown-source-text', id: 'project_description'
+            = f.text_area :description, rows: 20, placeholder: 'List the five members of your team here. You can use **markdown**.', class: 'form-control input-lg markdown-source-text', id: 'project_description'
         #markdown-preview.tab-pane.fade{ role: 'tab-pane' }
           #loading-spinner
             = fa_icon 'spinner pulse 3x'
@@ -33,6 +33,6 @@
   .form-group
     = f.label(:avatar)
     = f.file_field :avatar
-  = f.submit value: 'Create Idea', class: 'btn btn-success pull-right'
+  = f.submit value: 'Register', class: 'btn btn-success pull-right'
 
 

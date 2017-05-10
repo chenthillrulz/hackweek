@@ -78,7 +78,7 @@ class ProjectsController < ApplicationController
     @project.originator = current_user
 
     if @project.save
-      redirect_to project_path(@episode, @project), notice: 'Idea was successfully created.'
+      redirect_to project_path(@episode, @project), notice: 'Team successfully registered.'
     else
       render action: 'new'
     end

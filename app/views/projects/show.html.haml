@@ -17,14 +17,14 @@
           = @project.title
           %br
           %small
-            = render :partial => "projects/state_name", :locals => {:project =>  @project }
-            by
+            -#= render :partial => "projects/state_name", :locals => {:project =>  @project }
+            Created by
             = link_to user_path(@project.originator) do
               = @project.originator.name
-            = render :partial => "projects/like_button", :locals => {:project =>  @project }
-        %span.help-block
-          %small
-            = render :partial => "projects/info", :locals => {:project => @project }
+        -#    = render :partial => "projects/like_button", :locals => {:project =>  @project }
+        -#%span.help-block
+        -#  %small
+        -#    = render :partial => "projects/info", :locals => {:project => @project }
 .row
   .col-sm-8.project-style
     :markdown
@@ -34,60 +34,60 @@
       .col-sm-12
         .text-right
           = render :partial => "projects/file_buttons", :locals => {:project =>  @project }
-    .row
-      .col-sm-12
-        %h4
-          - if @project.users.empty?
-            No
-          Hackers:
-        .well.well-sm#hackers
-          - @project.users.each do |user|
-            = link_to(user_path(user)) do
-              = image_tag user.avatar.url(:small), :size => "70", alt: user.name, title: user.name, class: "img-thumbnail", id: "user#{user.id}-gravatar"
-        - unless @project.aasm_state == "invention"
-          %p.pull-right
-            - if @project.users.empty? or !@project.users.include? current_user
-              = link_to(join_project_path(@episode, @project), :method => :post, :class => "btn btn-success") do
-                %i.fa.fa-plus
-                Join this project
-            - if @project.users.include? current_user
-              = link_to(leave_project_path(@episode, @project), :method => :post, :class => "btn btn-warning") do
-                %i.fa.fa-minus
-                Leave this project
-          .clearfix
-    .row
-      .col-sm-12
-        %h4.divider
-          Looking for mad skills in:
-        %p
-          - if @project.keywords.empty?
-            Nothing? Add some keywords!
-          - else
-            = render :partial => "keywords/show", :locals => {:keywords =>  @project.keywords }
-          -if  @project.originator == current_user or @project.users.include? current_user
-            = render :partial => "keywords/new", :locals => {:what => @project }
-    .row
-      .col-sm-12
-        %h4.divider
-          This project is part of:
-        %p
-          - unless @project.episodes.any?
-            No Episode. How about you add one...
-          - @project.episodes.each do |episode|
-            %span.label.label-primary{style: 'display: inline-block'}
-              = truncate(episode.name, length: 50)
-              = link_to(episode_project_path(:episode_id => episode.id), method: :delete) do
-                %i.fa.fa-times{:style=>"color: #fff"}
-        .btn-group.pull-right
-          %button.btn.btn-success.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"}
-            %i.fa.fa-plus
-            Add Episode
-            %span.caret
-          %ul.dropdown-menu{:role => "menu"}
-            - Episode.all.reverse.each do |episode|
-              %li{:role => "presentation"}
-                = link_to(truncate(episode.name, length: 50), episode_project_path(:episode_id => episode.id), method: :post)
-        .clearfix
+    -#.row
+    -#  .col-sm-12
+    -#    %h4
+    -#      - if @project.users.empty?
+    -#        No
+    -#      Hackers:
+    -#    .well.well-sm#hackers
+    -#      - @project.users.each do |user|
+    -#        = link_to(user_path(user)) do
+    -#          = image_tag user.avatar.url(:small), :size => "70", alt: user.name, title: user.name, class: "img-thumbnail", id: "user#{user.id}-gravatar"
+    -#    - unless @project.aasm_state == "invention"
+    -#      %p.pull-right
+    -#        - if @project.users.empty? or !@project.users.include? current_user
+    -#          = link_to(join_project_path(@episode, @project), :method => :post, :class => "btn btn-success") do
+    -#            %i.fa.fa-plus
+    -#            Join this project
+    -#        - if @project.users.include? current_user
+    -#          = link_to(leave_project_path(@episode, @project), :method => :post, :class => "btn btn-warning") do
+    -#            %i.fa.fa-minus
+    -#            Leave this project
+    -#      .clearfix
+    -#.row
+    -#  .col-sm-12
+    -#    %h4.divider
+    -#      Looking for mad skills in:
+    -#    %p
+    -#      - if @project.keywords.empty?
+    -#        Nothing? Add some keywords!
+    -#      - else
+    -#        = render :partial => "keywords/show", :locals => {:keywords =>  @project.keywords }
+    -#      -if  @project.originator == current_user or @project.users.include? current_user
+    -#        = render :partial => "keywords/new", :locals => {:what => @project }
+    -#.row
+    -#  .col-sm-12
+    -#    %h4.divider
+    -#      This project is part of:
+    -#    %p
+    -#      - unless @project.episodes.any?
+    -#        No Episode. How about you add one...
+    -#      - @project.episodes.each do |episode|
+    -#        %span.label.label-primary{style: 'display: inline-block'}
+    -#          = truncate(episode.name, length: 50)
+    -#          = link_to(episode_project_path(:episode_id => episode.id), method: :delete) do
+    -#            %i.fa.fa-times{:style=>"color: #fff"}
+    -#    .btn-group.pull-right
+    -#      %button.btn.btn-success.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"}
+    -#        %i.fa.fa-plus
+    -#        Add Episode
+    -#        %span.caret
+    -#      %ul.dropdown-menu{:role => "menu"}
+    -#        - Episode.all.reverse.each do |episode|
+    -#          %li{:role => "presentation"}
+    -#            = link_to(truncate(episode.name, length: 50), episode_project_path(:episode_id => episode.id), method: :post)
+    -#    .clearfix
     .row
       .col-sm-12
         %h4.divider

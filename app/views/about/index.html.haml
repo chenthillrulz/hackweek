@@ -5,9 +5,7 @@
   .row
     .col-md-12
       %p.lead
-        The event that brings together engineers across locations
-        to collaborate, innovate and celebrate software. Across teams or individually, but always without limits. Time to expand
-        your horizons! And always remember to have fun!!
+        Please register your team with a Name and list the five members.
     .col-md-12
       %p.lead
         What are you going to hack on?
@@ -16,15 +14,7 @@
       %p
         .btn-group.btn-group-justified.btn-group-lg
           = link_to new_project_path, class: 'btn btn-lg btn-info' do
-            Start
+            Register
             %span.hidden-xs
-              a Project
-          = link_to projects_path(@episode), class: 'btn btn-lg btn-success' do
-            Join
-            %span.hidden-xs
-              a Project
-  .row
-    .col-md-12
-      %p.small.pull-right{style: 'margin-top: 20px'}
-        New here &amp; no idea what you're supposed to do?
-        = link_to 'Learn more...', about_path
+              Your Team
+
