@@ -73,11 +73,15 @@ h4.project-list-item img {
     position: relative;
   }
 
+  .login-helper {
+    color: 	#0899cc;
+  }
+
   .episode-details {
     position: absolute;
-    text-align: right;
-    top: 428px;
-    left: 699px;
+    text-align: left;
+    top: 442px;
+    left: 37px;
     width: 413px;
   }
 
@@ -85,14 +89,14 @@ h4.project-list-item img {
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-size: 26px;
-    color: white;
+    color: black;
   }
 
-  .episode-date {
+  .episode-subtitle {
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-size: 18px;
-    color: white;
+    color: slategray;
   }
 
   p.lead {
