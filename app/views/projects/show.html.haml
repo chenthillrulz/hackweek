@@ -34,27 +34,27 @@
       .col-sm-12
         .text-right
           = render :partial => "projects/file_buttons", :locals => {:project =>  @project }
-    -#.row
-    -#  .col-sm-12
-    -#    %h4
-    -#      - if @project.users.empty?
-    -#        No
-    -#      Hackers:
-    -#    .well.well-sm#hackers
-    -#      - @project.users.each do |user|
-    -#        = link_to(user_path(user)) do
-    -#          = image_tag user.avatar.url(:small), :size => "70", alt: user.name, title: user.name, class: "img-thumbnail", id: "user#{user.id}-gravatar"
-    -#    - unless @project.aasm_state == "invention"
-    -#      %p.pull-right
-    -#        - if @project.users.empty? or !@project.users.include? current_user
-    -#          = link_to(join_project_path(@episode, @project), :method => :post, :class => "btn btn-success") do
-    -#            %i.fa.fa-plus
-    -#            Join this project
-    -#        - if @project.users.include? current_user
-    -#          = link_to(leave_project_path(@episode, @project), :method => :post, :class => "btn btn-warning") do
-    -#            %i.fa.fa-minus
-    -#            Leave this project
-    -#      .clearfix
+    .row
+      .col-sm-12
+        %h4
+          - if @project.users.empty?
+            No
+          Hackers:
+        .well.well-sm#hackers
+          - @project.users.each do |user|
+            = link_to(user_path(user)) do
+              = image_tag user.avatar.url(:small), :size => "70", alt: user.name, title: user.name, class: "img-thumbnail", id: "user#{user.id}-gravatar"
+        - unless @project.aasm_state == "invention"
+          %p.pull-right
+            - if @project.users.empty? or !@project.users.include? current_user
+              = link_to(join_project_path(@episode, @project), :method => :post, :class => "btn btn-success") do
+                %i.fa.fa-plus
+                Join Team
+            - if @project.users.include? current_user
+              = link_to(leave_project_path(@episode, @project), :method => :post, :class => "btn btn-warning") do
+                %i.fa.fa-minus
+                Leave this project
+          .clearfix
     -#.row
     -#  .col-sm-12
     -#    %h4.divider
