@@ -47,17 +47,21 @@ class User < ActiveRecord::Base
     self.name = firstName + ' ' + lastName;
     self.email = Devise::LDAP::Adapter.get_ldap_param(self.login_name,'mail').first
 
-    ldap_photo = Devise::LDAP::Adapter.get_ldap_param(self.login_name,'thumbnailPhoto').first;
+    photos = Devise::LDAP::Adapter.get_ldap_param(self.login_name,'thumbnailPhoto')
 
-    if !ldap_photo.blank?
-      data = StringIO.new(ldap_photo)
-      data.class_eval do
-        attr_accessor :content_type, :original_filename
+    if !photos.blank?
+      ldap_photo = Devise::LDAP::Adapter.get_ldap_param(self.login_name,'thumbnailPhoto').first;
+
+      if !ldap_photo.blank?
+        data = StringIO.new(ldap_photo)
+        data.class_eval do
+          attr_accessor :content_type, :original_filename
+        end
+
+        data.content_type = "image/jpeg"
+        data.original_filename = File.basename(self.login_name + ".jpg")
+        self.avatar = data
       end
-
-      data.content_type = "image/jpeg"
-      data.original_filename = File.basename(self.login_name + ".jpg")
-      self.avatar = data
     end
 
   end
